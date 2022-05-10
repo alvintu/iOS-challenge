@@ -25,10 +25,10 @@ class TweetFeedViewController: UIViewController {
 		
 		return view
 	}()
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		view.addSubview(tableView)
 		view.backgroundColor = .white
@@ -51,16 +51,16 @@ class TweetFeedViewController: UIViewController {
 		)
 		
 		tweets = TwitterClient.shared.loadTimeline()
-    }
+	}
 	
 	@objc func logoutTapped() {
 		TwitterClient.shared.logOut()
-	navigationController?.pushViewController(LoginViewController(), animated: true)
+		navigationController?.pushViewController(LoginViewController(), animated: true)
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.isNavigationBarHidden = false
-
+		
 	}
 }
 
@@ -72,11 +72,11 @@ extension TweetFeedViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		UITableView.automaticDimension
 	}
-
+	
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier, for: indexPath) as! TweetCell
-
+		
 		
 		if let tweet = tweets?[indexPath.row] {
 			cell.configure(tweet)
