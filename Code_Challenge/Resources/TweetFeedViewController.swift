@@ -42,8 +42,6 @@ class TweetFeedViewController: UIViewController {
 		
 		
 		self.title = "Timeline"
-		navigationController?.navigationBar.prefersLargeTitles = true
-		navigationController?.isNavigationBarHidden = false
 		
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
 			title: "Logout",
@@ -57,6 +55,11 @@ class TweetFeedViewController: UIViewController {
 	
 	@objc func logoutTapped() {
 	navigationController?.pushViewController(LoginViewController(), animated: true)
+	}
+	override func viewWillAppear(_ animated: Bool) {
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.isNavigationBarHidden = false
+
 	}
 }
 

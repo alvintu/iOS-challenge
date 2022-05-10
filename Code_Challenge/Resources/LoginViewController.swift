@@ -13,16 +13,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationController?.isNavigationBarHidden = true
-		view.backgroundColor = .green
+		view.backgroundColor = .systemGray
 		let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-		button.backgroundColor = .green
+		button.backgroundColor = .systemYellow
+		button.layer.cornerRadius = 20
 		button.setTitle("Login", for: .normal)
-		button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+		button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
 		
 		self.view.addSubview(button)
     }
 	
-	@objc func buttonAction(sender: UIButton!) {
+	@objc func loginTapped(sender: UIButton!) {
 		self.navigationController?.popViewController(animated: true)
 	}
 }
