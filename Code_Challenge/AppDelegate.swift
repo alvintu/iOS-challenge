@@ -10,20 +10,24 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  var window: UIWindow?
-
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-	  
-	  let navigationController = UINavigationController()
-	  navigationController.setViewControllers([TweetFeedViewController(), LoginViewController()], animated: false)
-
-	  window = UIWindow(frame: UIScreen.main.bounds)
-	  window?.rootViewController = navigationController
-	  window?.makeKeyAndVisible()
-    return true
-  }
+	
+	var window: UIWindow?
+	
+	
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		
+		let navigationController = UINavigationController()
+		
+		if TwitterClient.shared.isLoggedIn.value {
+			navigationController.setViewControllers([TweetFeedViewController()], animated: false)
+		} else {
+			navigationController.setViewControllers([TweetFeedViewController(), LoginViewController()], animated: false)
+		}
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
+		return true
+	}
 	
 }
 
