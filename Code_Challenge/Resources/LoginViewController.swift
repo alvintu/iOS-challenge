@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 	
 	let userTextField =  LoginTextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
-	let passwordTextField =  UITextField(frame: CGRect(x: 20, y: 160, width: 300, height: 40))
+	let passwordTextField =  LoginTextField(frame: CGRect(x: 20, y: 160, width: 300, height: 40))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +27,6 @@ class LoginViewController: UIViewController {
 		
 		
 		userTextField.delegate = self
-
-		
-		
-		passwordTextField.placeholder = "Enter here"
-		passwordTextField.font = UIFont.systemFont(ofSize: 15)
-		passwordTextField.borderStyle = UITextField.BorderStyle.roundedRect
-		passwordTextField.autocorrectionType = UITextAutocorrectionType.no
-		passwordTextField.keyboardType = UIKeyboardType.default
-		passwordTextField.returnKeyType = UIReturnKeyType.done
-		passwordTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-		passwordTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
 		passwordTextField.delegate = self
 		
 		self.view.addSubview(userTextField)
