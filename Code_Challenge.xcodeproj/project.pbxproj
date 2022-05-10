@@ -89,6 +89,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2580B64282AC170003ADA6F /* TweetFeed */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B56282A9A33003ADA6F /* TweetFeedViewController.swift */,
+				C2580B69282AC1B6003ADA6F /* ViewModel */,
+				C2580B68282AC1B1003ADA6F /* View */,
+			);
+			path = TweetFeed;
+			sourceTree = "<group>";
+		};
+		C2580B65282AC188003ADA6F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B54282A99E8003ADA6F /* LoginViewController.swift */,
+				C2580B66282AC192003ADA6F /* ViewModel */,
+				C2580B67282AC19D003ADA6F /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C2580B66282AC192003ADA6F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B60282AB731003ADA6F /* LoginViewControllerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C2580B67282AC19D003ADA6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B5C282AAF1B003ADA6F /* LoginTextField.swift */,
+				C2580B5E282AB05A003ADA6F /* LoginButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2580B68282AC1B1003ADA6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B58282A9F49003ADA6F /* TweetCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2580B69282AC1B6003ADA6F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2580B62282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E5391C0A21AB788E0052B1EA = {
 			isa = PBXGroup;
 			children = (
@@ -135,13 +188,8 @@
 				E5391C1D21AB788E0052B1EA /* Assets.xcassets */,
 				E5391C1F21AB788E0052B1EA /* LaunchScreen.storyboard */,
 				E5391C2221AB788E0052B1EA /* Info.plist */,
-				C2580B54282A99E8003ADA6F /* LoginViewController.swift */,
-				C2580B60282AB731003ADA6F /* LoginViewControllerViewModel.swift */,
-				C2580B5C282AAF1B003ADA6F /* LoginTextField.swift */,
-				C2580B5E282AB05A003ADA6F /* LoginButton.swift */,
-				C2580B56282A9A33003ADA6F /* TweetFeedViewController.swift */,
-				C2580B62282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift */,
-				C2580B58282A9F49003ADA6F /* TweetCell.swift */,
+				C2580B65282AC188003ADA6F /* Login */,
+				C2580B64282AC170003ADA6F /* TweetFeed */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
