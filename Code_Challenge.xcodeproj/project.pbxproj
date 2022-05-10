@@ -13,6 +13,7 @@
 		C2580B5D282AAF1B003ADA6F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2580B5C282AAF1B003ADA6F /* LoginTextField.swift */; };
 		C2580B5F282AB05A003ADA6F /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2580B5E282AB05A003ADA6F /* LoginButton.swift */; };
 		C2580B61282AB731003ADA6F /* LoginViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2580B60282AB731003ADA6F /* LoginViewControllerViewModel.swift */; };
+		C2580B63282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2580B62282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift */; };
 		E39AD7CD50228EC0EFF63D84 /* Pods_Code_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCB362D8C5DED6F5762BA72 /* Pods_Code_ChallengeTests.framework */; };
 		E5391C1721AB788E0052B1EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5391C1621AB788E0052B1EA /* AppDelegate.swift */; };
 		E5391C1E21AB788E0052B1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5391C1D21AB788E0052B1EA /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		C2580B5C282AAF1B003ADA6F /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C2580B5E282AB05A003ADA6F /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		C2580B60282AB731003ADA6F /* LoginViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewModel.swift; sourceTree = "<group>"; };
+		C2580B62282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFeedViewControllerViewModel.swift; sourceTree = "<group>"; };
 		E5391C1321AB788E0052B1EA /* Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Code_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5391C1621AB788E0052B1EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5391C1D21AB788E0052B1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				C2580B5C282AAF1B003ADA6F /* LoginTextField.swift */,
 				C2580B5E282AB05A003ADA6F /* LoginButton.swift */,
 				C2580B56282A9A33003ADA6F /* TweetFeedViewController.swift */,
+				C2580B62282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift */,
 				C2580B58282A9F49003ADA6F /* TweetCell.swift */,
 			);
 			path = Resources;
@@ -378,6 +381,7 @@
 				C2580B5F282AB05A003ADA6F /* LoginButton.swift in Sources */,
 				E5391C3F21AB79D80052B1EA /* Tweet.swift in Sources */,
 				E5391C3D21AB79D10052B1EA /* TwitterClient.swift in Sources */,
+				C2580B63282ABDF7003ADA6F /* TweetFeedViewControllerViewModel.swift in Sources */,
 				C2580B59282A9F49003ADA6F /* TweetCell.swift in Sources */,
 				C2580B57282A9A33003ADA6F /* TweetFeedViewController.swift in Sources */,
 				E5391C1721AB788E0052B1EA /* AppDelegate.swift in Sources */,

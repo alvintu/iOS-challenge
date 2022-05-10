@@ -10,9 +10,7 @@ import UIKit
 
 class TweetFeedViewController: UIViewController {
 	
-	var tweets : [Tweet]? {
-		didSet { tableView.reloadData() }
-	}
+	let viewModel = TweetFeedViewController.ViewModel()
 	
 	private lazy var tableView: UITableView = {
 		let view = UITableView(frame: .zero, style: .grouped)
@@ -50,12 +48,13 @@ class TweetFeedViewController: UIViewController {
 			action: #selector(logoutTapped)
 		)
 		
-		tweets = TwitterClient.shared.loadTimeline()
 	}
 	
 	@objc func logoutTapped() {
-		TwitterClient.shared.logOut()
+		viewModel.logout()
+		if !viewModel.userIsLoggedIn {
 		navigationController?.pushViewController(LoginViewController(), animated: true)
+		}
 	}
 	override func viewWillAppear(_ animated: Bool) {
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -66,7 +65,7 @@ class TweetFeedViewController: UIViewController {
 
 extension TweetFeedViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		tweets?.count ?? 0
+		viewModel.tweets?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,7 +77,7 @@ extension TweetFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier, for: indexPath) as! TweetCell
 		
 		
-		if let tweet = tweets?[indexPath.row] {
+		if let tweet = viewModel.tweets?[indexPath.row] {
 			cell.configure(tweet)
 		}
 		
