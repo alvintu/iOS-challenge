@@ -54,6 +54,7 @@ class TweetFeedViewController: UIViewController {
     }
 	
 	@objc func logoutTapped() {
+		TwitterClient.shared.logOut()
 	navigationController?.pushViewController(LoginViewController(), animated: true)
 	}
 	override func viewWillAppear(_ animated: Bool) {
