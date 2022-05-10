@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 	
-	let userTextField =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+	let userTextField =  LoginTextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
 	let passwordTextField =  UITextField(frame: CGRect(x: 20, y: 160, width: 300, height: 40))
 
     override func viewDidLoad() {
@@ -26,14 +26,6 @@ class LoginViewController: UIViewController {
 		button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
 		
 		
-		userTextField.placeholder = "Enter username here"
-		userTextField.font = UIFont.systemFont(ofSize: 15)
-		userTextField.borderStyle = UITextField.BorderStyle.roundedRect
-		userTextField.autocorrectionType = UITextAutocorrectionType.no
-		userTextField.keyboardType = UIKeyboardType.default
-		userTextField.returnKeyType = UIReturnKeyType.done
-		userTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-		userTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
 		userTextField.delegate = self
 
 		
