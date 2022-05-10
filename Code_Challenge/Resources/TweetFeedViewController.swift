@@ -41,8 +41,23 @@ class TweetFeedViewController: UIViewController {
 		])
 		
 		
+		self.title = "Timeline"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.isNavigationBarHidden = false
+		
+		navigationItem.rightBarButtonItem = UIBarButtonItem(
+			title: "Logout",
+			style: .done,
+			target: self,
+			action: #selector(logoutTapped)
+		)
+		
 		tweets = TwitterClient.shared.loadTimeline()
     }
+	
+	@objc func logoutTapped() {
+	navigationController?.pushViewController(LoginViewController(), animated: true)
+	}
 }
 
 extension TweetFeedViewController: UITableViewDelegate, UITableViewDataSource {

@@ -18,10 +18,9 @@ class TweetCell: UITableViewCell {
 		return label
 	}()
 	
-	private lazy var button: UIButton = {
+	private lazy var userButton: UIButton = {
 		let button = UIButton(frame: .zero)
-		button.setTitle("BUTTON", for: .normal)
-		button.setTitleColor(.blue, for: .normal)
+		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		
@@ -31,17 +30,17 @@ class TweetCell: UITableViewCell {
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.contentView.addSubview(contentLabel)
-//		self.contentView.addSubview(button)
+		self.contentView.addSubview(userButton)
 		
 		NSLayoutConstraint.activate([
 			contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
 			contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 			contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
 			
-//			button.heightAnchor.constraint(equalToConstant: 44.0),
-//			button.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-//			button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-//			button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+			userButton.heightAnchor.constraint(equalToConstant: 44.0),
+			userButton.leadingAnchor.constraint(equalTo: contentLabel.leadingAnchor),
+			userButton.topAnchor.constraint(equalTo: contentLabel.bottomAnchor),
+			userButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
 		])
 	}
 	
@@ -55,5 +54,6 @@ class TweetCell: UITableViewCell {
 	
 	func configure(_ tweet: Tweet) {
 		self.contentLabel.text = tweet.content
+		userButton.setTitle("See \(tweet.user)'s tweets", for: .normal)
 	}
 }
