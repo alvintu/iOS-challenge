@@ -14,10 +14,10 @@ class LoginViewController: UIViewController {
 	
 	let userTextField =  LoginTextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
 	let passwordTextField =  LoginTextField(frame: CGRect(x: 20, y: 160, width: 300, height: 40))
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 	
 	override func viewWillLayoutSubviews() {
 		
@@ -44,30 +44,12 @@ class LoginViewController: UIViewController {
 		viewModel.login(for: userText, and: passwordText)
 		
 		if viewModel.userIsLoggedIn {
-		self.navigationController?.popViewController(animated: true)
-		
+			self.navigationController?.popViewController(animated: true)
+			
 		}
 	}
 }
 
 extension LoginViewController: UITextFieldDelegate {
 	
-}
-
-extension LoginViewController {
-	final class ViewModel: NSObject {
-		
-		var userIsLoggedIn: Bool {
-			return TwitterClient.shared.isLoggedIn.value
-		}
-		
-		
-		func login(for user: String, and password: String) {
-			TwitterClient.shared.logIn(username: user.lowercased(), password: password.lowercased())
-		}
-		
-		override init() {
-			super.init()
-		}
-	}
 }
