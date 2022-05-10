@@ -39,7 +39,8 @@ class LoginViewController: UIViewController {
 	}
 	
 	@objc func loginTapped(sender: UIButton!) {
-		guard let userText = userTextField.text, let passwordText = passwordTextField.text else { return }
+		guard let userText = userTextField.text,
+			  let passwordText = passwordTextField.text else { return }
 		
 		viewModel.login(for: userText, and: passwordText)
 		
