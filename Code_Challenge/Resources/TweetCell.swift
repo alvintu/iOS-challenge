@@ -11,6 +11,8 @@ import UIKit
 class TweetCell: UITableViewCell {
 	static let identifier = "TweetCell"
 	
+	var buttonTapCallback: () -> ()  = { }
+
 	private lazy var contentLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +22,7 @@ class TweetCell: UITableViewCell {
 	
 	private lazy var userButton: UIButton = {
 		let button = UIButton(frame: .zero)
-		button.setTitleColor(.white, for: .normal)
+		button.setTitleColor(.blue, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		
@@ -31,6 +33,8 @@ class TweetCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.contentView.addSubview(contentLabel)
 		self.contentView.addSubview(userButton)
+		userButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+
 		
 		NSLayoutConstraint.activate([
 			contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
@@ -44,6 +48,11 @@ class TweetCell: UITableViewCell {
 		])
 	}
 	
+	@objc func didTapButton() {
+		buttonTapCallback()
+	}
+	
+	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented.")
 	}
@@ -54,6 +63,7 @@ class TweetCell: UITableViewCell {
 	
 	func configure(_ tweet: Tweet) {
 		self.contentLabel.text = tweet.content
-		userButton.setTitle("See \(tweet.user)'s tweets", for: .normal)
+		userButton.setTitle("Follow \(tweet.user)'s tweets", for: .normal)
+		
 	}
 }

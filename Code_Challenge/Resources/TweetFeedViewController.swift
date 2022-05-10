@@ -79,6 +79,12 @@ extension TweetFeedViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		if let tweet = viewModel.tweets?[indexPath.row] {
 			cell.configure(tweet)
+			cell.buttonTapCallback = {
+				let alert = UIAlertController(title: "\(tweet.user)", message: "Would you like to follow \(tweet.user)?", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+				}))
+				self.present(alert, animated: true, completion: nil)
+			}
 		}
 		
 		return cell
