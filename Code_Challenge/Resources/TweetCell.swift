@@ -15,6 +15,7 @@ class TweetCell: UITableViewCell {
 
 	private lazy var contentLabel: UILabel = {
 		let label = UILabel()
+		label.numberOfLines = 0
 		label.translatesAutoresizingMaskIntoConstraints = false
 		
 		return label
