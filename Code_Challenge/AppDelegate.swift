@@ -16,8 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+	  
+	  let navigationController = UINavigationController()
+	  navigationController.setViewControllers([TweetFeedViewController(), LoginViewController()], animated: false)
+
 	  window = UIWindow(frame: UIScreen.main.bounds)
-	  window?.rootViewController = LoginViewController()
+	  window?.rootViewController = navigationController
 	  window?.makeKeyAndVisible()
     return true
   }
