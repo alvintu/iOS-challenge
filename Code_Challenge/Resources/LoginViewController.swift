@@ -15,24 +15,26 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+	
+	override func viewWillLayoutSubviews() {
 		
 		navigationController?.isNavigationBarHidden = true
 		view.backgroundColor = .systemGray
 		
-		let button = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 50))
-		button.backgroundColor = .systemYellow
-		button.layer.cornerRadius = 20
-		button.setTitle("Login", for: .normal)
-		button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+		let loginButton = LoginButton(frame: CGRect(x: 100, y: 250, width: 100, height: 50))
+		loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
 		
+		userTextField.placeholder = "Enter Username"
+		passwordTextField.placeholder = "Enter Password"
 		
 		userTextField.delegate = self
 		passwordTextField.delegate = self
 		
-		self.view.addSubview(userTextField)
-		self.view.addSubview(passwordTextField)
-		self.view.addSubview(button)
-    }
+		view.addSubview(userTextField)
+		view.addSubview(passwordTextField)
+		view.addSubview(loginButton)
+	}
 	
 	@objc func loginTapped(sender: UIButton!) {
 		guard let userText = userTextField.text, let passwordText = passwordTextField.text else { return }

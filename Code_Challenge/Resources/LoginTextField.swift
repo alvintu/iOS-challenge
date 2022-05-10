@@ -8,10 +8,14 @@
 
 import UIKit
 
+enum TextFieldType {
+	case user
+	case password
+}
+
 class LoginTextField: UITextField {
 	
 	func setup() {
-		placeholder = "Enter username here"
 		font = UIFont.systemFont(ofSize: 15)
 		borderStyle = UITextField.BorderStyle.roundedRect
 		autocorrectionType = UITextAutocorrectionType.no
